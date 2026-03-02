@@ -38,7 +38,7 @@ L7 = zeros(rows,cols,dispLevels);
 L8 = zeros(rows,cols,dispLevels);
 
 % Forward pass
-for y = 2:rows-1
+for y = 2:rows
     for x = 2:cols-1
         % left to right direction
         cost = squeeze(dataCost(y,x-1,:)+L1(y,x-1,:));
@@ -63,7 +63,7 @@ for y = 2:rows-1
 end
 
 % Backward pass
-for y = rows-1:-1:2
+for y = rows-1:-1:1
     for x = cols-1:-1:2
         % right to left direction
         cost = squeeze(dataCost(y,x+1,:)+L5(y,x+1,:));
